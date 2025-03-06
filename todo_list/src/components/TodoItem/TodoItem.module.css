@@ -1,0 +1,33 @@
+.TodoTask {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3px;
+  min-width: 20%;
+  min-height: 80px;
+  background-color: var(--list-color);
+  border-radius: 1.3em;
+  border: 3px solid var(--main-color);
+}
+
+.ButtonDelete {
+  transition: all 0.3s ease-out;
+  width: 4.5rem;
+  height: 90%;
+  border-radius: 0.9em;
+  border: 3px solid var(--main-color);
+}
+
+.ButtonDelete:hover {
+  background-color: var(--button-hover);
+  color: #ffffff;
+}
+
+.ButtonDelete:active {
+  color: #ffffff;
+  transition: 0.05s;
+  box-shadow: 0 1px 8px 0.03em var(--extra-dark-gray);
+  background-color: var(--button-active);
+  border-radius: 0.9em;
+  border: 3px solid var(--button-border);
+}

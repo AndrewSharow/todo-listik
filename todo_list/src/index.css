@@ -1,0 +1,18 @@
+:root {
+  --main-color: #808080; /* Cool Gray */
+  --bg-color: #d3d3d3; /* Soft Gray for background */ /* Cool Gray for buttons */
+  --list-color: #7e999b;
+  --button-hover: #5a5a5a; /* Darker Gray for hover */
+  --button-active: #3f3f3f; /* Extra Dark Gray for active state */
+  --button-border: #696969; /* Dim Gray for button borders */
+  --dark-contrast: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  background-color: var(--bg-color);
+}
