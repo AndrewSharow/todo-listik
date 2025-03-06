@@ -2,7 +2,6 @@ import { useState } from "react";
 import TodoItem from "../TodoItem/TodoItem.jsx";
 import TodoData from "../../assets/Todo.json";
 import s from "./TodosList.module.css";
-import { nanoid } from "nanoid";
 const TodosList = () => {
   const [TodoList, setTodoList] = useState(TodoData);
 
@@ -15,7 +14,7 @@ const TodosList = () => {
     <ul className={s.Todoslist}>
       {TodoList.map((item) => (
         <TodoItem
-          key={nanoid()}
+          key={item.id}
           {...item}
           handleDeleteTodoItem={handleDeleteTodoItem}
         />
