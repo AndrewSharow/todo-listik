@@ -1,7 +1,8 @@
 .Todoslist {
   display: flex;
   justify-content: center;
-  padding-left: 3rem;
-  list-style-type: none;
+  align-items: center;
+  padding: 0 3rem;
   margin-top: 20px;
+  flex-direction: column;
 }
