@@ -1,22 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TodoItem from "../TodoItem/TodoItem.jsx";
-import TodoData from "../../assets/Todo.json";
+import TodoDataTempplate from "../../assets/TodoTemplate.json";
 import s from "./TodosList.module.css";
 import { nanoid } from "nanoid";
 import TodoInput from "./TodoInput/TodoInput.jsx";
 const TodosList = () => {
-  const [TodoList, setTodoList] = useState(TodoData);
+  const [TodoList, setTodoList] = useState(() => {
+    const todoListTemp = JSON.parse(window.localStorage.getItem("todoList"));
+    if (todoListTemp?.length) {
+      return todoListTemp;
+    }
+    return TodoDataTempplate;
+  });
   const [TodoInputValue, setTodoInputValue] = useState("");
 
   const handleDeleteTodoItem = (id) => {
-    console.log(id);
+    // console.log(id);
     setTodoList((prev) => prev.filter((item) => item.id !== id));
   };
 
   const handleAddTodo = () => {
-    const newTodo = { id: nanoid(), text: TodoInputValue };
-    setTodoList((prev) => [...prev, newTodo]);
+    console.log(TodoInputValue);
+    if (TodoInputValue) {
+      const newTodo = { id: nanoid(), text: TodoInputValue };
+      setTodoList((prev) => [...prev, newTodo]);
+      setTodoInputValue("");
+    }
   };
+
+  useEffect(() => {
+    window.localStorage.setItem("todoList", JSON.stringify(TodoList));
+    console.log("List saved");
+  }, [TodoList]);
 
   return (
     <>

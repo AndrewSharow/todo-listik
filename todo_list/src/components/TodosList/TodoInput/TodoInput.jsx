@@ -7,7 +7,9 @@ const TodoInput = ({ TodoInputValue, setTodoInputValue, handleAddTodo }) => {
         placeholder="Write your task:"
         className={s.Input}
         value={TodoInputValue}
-        onChange={(e) => setTodoInputValue(e.target.value)}
+        onChange={(e) => {
+          setTodoInputValue(e.target.value);
+        }}
       />
       <button
         type="button"
